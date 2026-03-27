@@ -4,6 +4,7 @@ nav:
 - Guides:
   - Authentication: guides/authentication.md
   - Async Task Pattern: guides/async-tasks.md
+  - MEAI Integration: guides/meai.md
 # EXAMPLES:START
 # EXAMPLES:END
         
