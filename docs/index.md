@@ -24,9 +24,9 @@ using var client = new KlingAIClient(apiKey);
 
 ## Support
 
-Priority place for bugs: https://github.com/tryAGI/KlingAI/issues  
-Priority place for ideas and general questions: https://github.com/tryAGI/KlingAI/discussions  
-Discord: https://discord.gg/Ca2xhfBf3v  
+Priority place for bugs: https://github.com/tryAGI/KlingAI/issues
+Priority place for ideas and general questions: https://github.com/tryAGI/KlingAI/discussions
+Discord: https://discord.gg/Ca2xhfBf3v
 
 ## Acknowledgments
 
