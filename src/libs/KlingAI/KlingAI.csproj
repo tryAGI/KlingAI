@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget">
+    <Description>C# SDK based on KlingAI OpenAPI specification.</Description>
+    <PackageTags>api;client;sdk;dotnet;openapi;kling-ai;video-generation;image-generation;ai;autosdk</PackageTags>
+  </PropertyGroup>
+
+</Project>
