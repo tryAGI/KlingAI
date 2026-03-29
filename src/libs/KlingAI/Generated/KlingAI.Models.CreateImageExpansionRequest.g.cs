@@ -53,10 +53,10 @@ namespace KlingAI
         /// <param name="image">
         /// Input image as Base64 string or URL.
         /// </param>
+        /// <param name="expansionRatio"></param>
         /// <param name="prompt">
         /// Text prompt to guide the expansion.
         /// </param>
-        /// <param name="expansionRatio"></param>
         /// <param name="aspectRatio">
         /// Target aspect ratio.
         /// </param>
@@ -74,8 +74,8 @@ namespace KlingAI
             string? callbackUrl)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.ExpansionRatio = expansionRatio ?? throw new global::System.ArgumentNullException(nameof(expansionRatio));
             this.Prompt = prompt;
+            this.ExpansionRatio = expansionRatio ?? throw new global::System.ArgumentNullException(nameof(expansionRatio));
             this.AspectRatio = aspectRatio;
             this.CallbackUrl = callbackUrl;
         }
