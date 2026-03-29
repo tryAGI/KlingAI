@@ -57,14 +57,14 @@ namespace KlingAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateMultiImageGenerationRequest" /> class.
         /// </summary>
-        /// <param name="modelName">
-        /// Model to use for generation.
-        /// </param>
         /// <param name="prompt">
         /// Text prompt for generation. Max 2500 characters.
         /// </param>
         /// <param name="images">
         /// Array of reference images as Base64 strings or URLs.
+        /// </param>
+        /// <param name="modelName">
+        /// Model to use for generation.
         /// </param>
         /// <param name="aspectRatio">
         /// Aspect ratio of the output image.
@@ -87,9 +87,9 @@ namespace KlingAI
             int? n,
             string? callbackUrl)
         {
+            this.ModelName = modelName;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
-            this.ModelName = modelName;
             this.AspectRatio = aspectRatio;
             this.N = n;
             this.CallbackUrl = callbackUrl;

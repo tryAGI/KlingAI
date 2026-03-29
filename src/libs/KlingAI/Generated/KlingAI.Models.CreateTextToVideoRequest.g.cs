@@ -95,12 +95,12 @@ namespace KlingAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTextToVideoRequest" /> class.
         /// </summary>
+        /// <param name="prompt">
+        /// Text prompt for video generation. Max 2500 characters.
+        /// </param>
         /// <param name="modelName">
         /// Model to use for generation.<br/>
         /// Default Value: kling-v1
-        /// </param>
-        /// <param name="prompt">
-        /// Text prompt for video generation. Max 2500 characters.
         /// </param>
         /// <param name="negativePrompt">
         /// Negative prompt to exclude unwanted content. Max 2500 characters.
@@ -148,8 +148,8 @@ namespace KlingAI
             string? callbackUrl,
             string? externalTaskId)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ModelName = modelName;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.NegativePrompt = negativePrompt;
             this.CfgScale = cfgScale;
             this.Mode = mode;

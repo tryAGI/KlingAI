@@ -45,15 +45,15 @@ namespace KlingAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateVirtualTryOnRequest" /> class.
         /// </summary>
-        /// <param name="modelName">
-        /// Model to use for virtual try-on.<br/>
-        /// Default Value: kolors-virtual-try-on-v1-5
-        /// </param>
         /// <param name="personImageUrl">
         /// URL of the person image.
         /// </param>
         /// <param name="clothImageUrls">
         /// Array of garment image URLs. 1-5 items.
+        /// </param>
+        /// <param name="modelName">
+        /// Model to use for virtual try-on.<br/>
+        /// Default Value: kolors-virtual-try-on-v1-5
         /// </param>
         /// <param name="callbackUrl">
         /// URL to receive webhook callback when task completes.
@@ -67,9 +67,9 @@ namespace KlingAI
             global::KlingAI.CreateVirtualTryOnRequestModelName? modelName,
             string? callbackUrl)
         {
+            this.ModelName = modelName;
             this.PersonImageUrl = personImageUrl ?? throw new global::System.ArgumentNullException(nameof(personImageUrl));
             this.ClothImageUrls = clothImageUrls ?? throw new global::System.ArgumentNullException(nameof(clothImageUrls));
-            this.ModelName = modelName;
             this.CallbackUrl = callbackUrl;
         }
 

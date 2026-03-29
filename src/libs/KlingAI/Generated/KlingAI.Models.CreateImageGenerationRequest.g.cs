@@ -100,12 +100,12 @@ namespace KlingAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateImageGenerationRequest" /> class.
         /// </summary>
+        /// <param name="prompt">
+        /// Text prompt for image generation. Max 2500 characters.
+        /// </param>
         /// <param name="modelName">
         /// Model to use for generation.<br/>
         /// Default Value: kling-v1
-        /// </param>
-        /// <param name="prompt">
-        /// Text prompt for image generation. Max 2500 characters.
         /// </param>
         /// <param name="negativePrompt">
         /// Negative prompt to exclude unwanted content. Max 2500 characters.
@@ -159,8 +159,8 @@ namespace KlingAI
             string? callbackUrl,
             string? externalTaskId)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ModelName = modelName;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.NegativePrompt = negativePrompt;
             this.Image = image;
             this.ImageReference = imageReference;
