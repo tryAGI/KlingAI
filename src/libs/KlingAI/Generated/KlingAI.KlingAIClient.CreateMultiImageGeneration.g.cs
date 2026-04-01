@@ -252,6 +252,7 @@ namespace KlingAI
             string? callbackUrl = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::KlingAI.CreateMultiImageGenerationRequest
             {
                 ModelName = modelName,

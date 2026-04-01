@@ -295,6 +295,7 @@ namespace KlingAI
             string? externalTaskId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::KlingAI.CreateImageToVideoRequest
             {
                 ModelName = modelName,
