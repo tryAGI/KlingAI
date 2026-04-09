@@ -5,6 +5,25 @@ namespace KlingAI
 {
     public partial class KlingAIClient
     {
+
+
+        private static readonly global::KlingAI.EndPointSecurityRequirement s_ListImageToVideoTasksSecurityRequirement0 =
+            new global::KlingAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::KlingAI.EndPointAuthorizationRequirement[]
+                {                    new global::KlingAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::KlingAI.EndPointSecurityRequirement[] s_ListImageToVideoTasksSecurityRequirements =
+            new global::KlingAI.EndPointSecurityRequirement[]
+            {                s_ListImageToVideoTasksSecurityRequirement0,
+            };
         partial void PrepareListImageToVideoTasksArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? pageNum,
@@ -47,13 +66,19 @@ namespace KlingAI
                 pageNum: ref pageNum,
                 pageSize: ref pageSize);
 
+
+            var __authorizations = global::KlingAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListImageToVideoTasksSecurityRequirements,
+                operationName: "ListImageToVideoTasksAsync");
+
             var __pathBuilder = new global::KlingAI.PathBuilder(
                 path: "/v1/videos/image2video",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("pageNum", pageNum?.ToString())
                 .AddOptionalParameter("pageSize", pageSize?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -63,7 +88,7 @@ namespace KlingAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

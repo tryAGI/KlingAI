@@ -5,6 +5,25 @@ namespace KlingAI
 {
     public partial class KlingAIClient
     {
+
+
+        private static readonly global::KlingAI.EndPointSecurityRequirement s_GetVideoExtensionTaskSecurityRequirement0 =
+            new global::KlingAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::KlingAI.EndPointAuthorizationRequirement[]
+                {                    new global::KlingAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::KlingAI.EndPointSecurityRequirement[] s_GetVideoExtensionTaskSecurityRequirements =
+            new global::KlingAI.EndPointSecurityRequirement[]
+            {                s_GetVideoExtensionTaskSecurityRequirement0,
+            };
         partial void PrepareGetVideoExtensionTaskArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -38,9 +57,15 @@ namespace KlingAI
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::KlingAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetVideoExtensionTaskSecurityRequirements,
+                operationName: "GetVideoExtensionTaskAsync");
+
             var __pathBuilder = new global::KlingAI.PathBuilder(
                 path: $"/v1/videos/video-extend/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -50,7 +75,7 @@ namespace KlingAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

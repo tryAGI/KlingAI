@@ -5,6 +5,25 @@ namespace KlingAI
 {
     public partial class KlingAIClient
     {
+
+
+        private static readonly global::KlingAI.EndPointSecurityRequirement s_CreateVirtualTryOnSecurityRequirement0 =
+            new global::KlingAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::KlingAI.EndPointAuthorizationRequirement[]
+                {                    new global::KlingAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::KlingAI.EndPointSecurityRequirement[] s_CreateVirtualTryOnSecurityRequirements =
+            new global::KlingAI.EndPointSecurityRequirement[]
+            {                s_CreateVirtualTryOnSecurityRequirement0,
+            };
         partial void PrepareCreateVirtualTryOnArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::KlingAI.CreateVirtualTryOnRequest request);
@@ -41,9 +60,15 @@ namespace KlingAI
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::KlingAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateVirtualTryOnSecurityRequirements,
+                operationName: "CreateVirtualTryOnAsync");
+
             var __pathBuilder = new global::KlingAI.PathBuilder(
                 path: "/v1/images/kolors-virtual-try-on",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace KlingAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

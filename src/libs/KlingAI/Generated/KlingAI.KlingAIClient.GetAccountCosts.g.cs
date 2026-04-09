@@ -5,6 +5,25 @@ namespace KlingAI
 {
     public partial class KlingAIClient
     {
+
+
+        private static readonly global::KlingAI.EndPointSecurityRequirement s_GetAccountCostsSecurityRequirement0 =
+            new global::KlingAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::KlingAI.EndPointAuthorizationRequirement[]
+                {                    new global::KlingAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::KlingAI.EndPointSecurityRequirement[] s_GetAccountCostsSecurityRequirements =
+            new global::KlingAI.EndPointSecurityRequirement[]
+            {                s_GetAccountCostsSecurityRequirement0,
+            };
         partial void PrepareGetAccountCostsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref long startTime,
@@ -48,6 +67,12 @@ namespace KlingAI
                 endTime: ref endTime,
                 resourcePackName: ref resourcePackName);
 
+
+            var __authorizations = global::KlingAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAccountCostsSecurityRequirements,
+                operationName: "GetAccountCostsAsync");
+
             var __pathBuilder = new global::KlingAI.PathBuilder(
                 path: "/account/costs",
                 baseUri: HttpClient.BaseAddress); 
@@ -55,7 +80,7 @@ namespace KlingAI
                 .AddRequiredParameter("start_time", startTime.ToString()!)
                 .AddRequiredParameter("end_time", endTime.ToString()!)
                 .AddOptionalParameter("resource_pack_name", resourcePackName) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -65,7 +90,7 @@ namespace KlingAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
