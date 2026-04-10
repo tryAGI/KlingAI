@@ -9,11 +9,13 @@ namespace KlingAI
         /// Generate images from a text prompt with optional image reference.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::KlingAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::KlingAI.CreateTaskResponse> CreateImageGenerationAsync(
 
             global::KlingAI.CreateImageGenerationRequest request,
+            global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create image generation task<br/>
@@ -61,6 +63,7 @@ namespace KlingAI
         /// <param name="externalTaskId">
         /// External task ID for tracking purposes.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::KlingAI.CreateTaskResponse> CreateImageGenerationAsync(
@@ -76,6 +79,7 @@ namespace KlingAI
             global::KlingAI.CreateImageGenerationRequestResolution? resolution = default,
             string? callbackUrl = default,
             string? externalTaskId = default,
+            global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
