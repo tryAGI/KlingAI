@@ -9,11 +9,13 @@ namespace KlingAI
         /// Generate a virtual try-on image by placing garments on a person image.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::KlingAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::KlingAI.CreateTaskResponse> CreateVirtualTryOnAsync(
 
             global::KlingAI.CreateVirtualTryOnRequest request,
+            global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create virtual try-on task<br/>
@@ -32,6 +34,7 @@ namespace KlingAI
         /// <param name="callbackUrl">
         /// URL to receive webhook callback when task completes.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::KlingAI.CreateTaskResponse> CreateVirtualTryOnAsync(
@@ -39,6 +42,7 @@ namespace KlingAI
             global::System.Collections.Generic.IList<string> clothImageUrls,
             global::KlingAI.CreateVirtualTryOnRequestModelName? modelName = default,
             string? callbackUrl = default,
+            global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

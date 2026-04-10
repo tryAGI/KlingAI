@@ -25,6 +25,7 @@ namespace KlingAI
             Authorizations.Add(new global::KlingAI.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "BearerAuth",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,
