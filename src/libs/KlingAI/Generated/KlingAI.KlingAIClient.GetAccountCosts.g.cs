@@ -140,8 +140,8 @@ namespace KlingAI
                 PrepareGetAccountCostsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime,
-                    endTime: endTime,
+                    startTime: startTime!,
+                    endTime: endTime!,
                     resourcePackName: resourcePackName);
 
                 return __httpRequest;
