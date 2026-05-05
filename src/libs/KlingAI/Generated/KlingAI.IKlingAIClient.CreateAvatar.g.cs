@@ -21,6 +21,19 @@ namespace KlingAI
         /// Create avatar lip-sync task<br/>
         /// Generate a talking avatar video from an image and audio/text input.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::KlingAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::KlingAI.AutoSDKHttpResponse<global::KlingAI.CreateTaskResponse>> CreateAvatarAsResponseAsync(
+
+            global::KlingAI.CreateAvatarRequest request,
+            global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create avatar lip-sync task<br/>
+        /// Generate a talking avatar video from an image and audio/text input.
+        /// </summary>
         /// <param name="image">
         /// Avatar image as Base64 string or URL.
         /// </param>
