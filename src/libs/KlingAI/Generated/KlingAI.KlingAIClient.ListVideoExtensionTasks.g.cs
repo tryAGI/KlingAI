@@ -62,6 +62,34 @@ namespace KlingAI
             global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListVideoExtensionTasksAsResponseAsync(
+                pageNum: pageNum,
+                pageSize: pageSize,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List video extension tasks<br/>
+        /// Query a paginated list of video extension tasks.
+        /// </summary>
+        /// <param name="pageNum">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::KlingAI.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::KlingAI.AutoSDKHttpResponse<global::KlingAI.TaskListResponse>> ListVideoExtensionTasksAsResponseAsync(
+            int? pageNum = default,
+            int? pageSize = default,
+            global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListVideoExtensionTasksArguments(
@@ -91,12 +119,13 @@ namespace KlingAI
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::KlingAI.PathBuilder(
                                 path: "/v1/videos/video-extend",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("pageNum", pageNum?.ToString())
-                                .AddOptionalParameter("pageSize", pageSize?.ToString()) 
+                                .AddOptionalParameter("pageSize", pageSize?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::KlingAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -169,6 +198,8 @@ namespace KlingAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -179,6 +210,11 @@ namespace KlingAI
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::KlingAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::KlingAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -196,6 +232,8 @@ namespace KlingAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -205,8 +243,7 @@ namespace KlingAI
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::KlingAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -215,6 +252,11 @@ namespace KlingAI
                         __attempt < __maxAttempts &&
                         global::KlingAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::KlingAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::KlingAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::KlingAI.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -231,14 +273,15 @@ namespace KlingAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::KlingAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -278,6 +321,8 @@ namespace KlingAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -298,6 +343,8 @@ namespace KlingAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -322,9 +369,13 @@ namespace KlingAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::KlingAI.TaskListResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::KlingAI.TaskListResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::KlingAI.AutoSDKHttpResponse<global::KlingAI.TaskListResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::KlingAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -352,9 +403,13 @@ namespace KlingAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::KlingAI.TaskListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::KlingAI.TaskListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::KlingAI.AutoSDKHttpResponse<global::KlingAI.TaskListResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::KlingAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
