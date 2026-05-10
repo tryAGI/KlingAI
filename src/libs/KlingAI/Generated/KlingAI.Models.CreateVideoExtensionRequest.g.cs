@@ -88,5 +88,6 @@ namespace KlingAI
         public CreateVideoExtensionRequest()
         {
         }
+
     }
 }

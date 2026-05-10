@@ -62,5 +62,6 @@ namespace KlingAI
         public CreateLipSyncRequest()
         {
         }
+
     }
 }

@@ -73,5 +73,6 @@ namespace KlingAI
         public CreateVideoEffectsRequest()
         {
         }
+
     }
 }

@@ -179,5 +179,6 @@ namespace KlingAI
         public CreateImageGenerationRequest()
         {
         }
+
     }
 }

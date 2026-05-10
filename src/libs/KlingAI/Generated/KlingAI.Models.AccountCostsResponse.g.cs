@@ -72,5 +72,6 @@ namespace KlingAI
         public AccountCostsResponse()
         {
         }
+
     }
 }

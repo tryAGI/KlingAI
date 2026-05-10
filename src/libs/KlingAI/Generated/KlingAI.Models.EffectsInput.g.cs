@@ -55,5 +55,6 @@ namespace KlingAI
         public EffectsInput()
         {
         }
+
     }
 }

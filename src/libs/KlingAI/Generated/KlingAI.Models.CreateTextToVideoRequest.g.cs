@@ -167,5 +167,6 @@ namespace KlingAI
         public CreateTextToVideoRequest()
         {
         }
+
     }
 }

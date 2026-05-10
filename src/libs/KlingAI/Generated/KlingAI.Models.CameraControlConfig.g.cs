@@ -96,5 +96,6 @@ namespace KlingAI
         public CameraControlConfig()
         {
         }
+
     }
 }
