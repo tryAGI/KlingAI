@@ -221,5 +221,6 @@ namespace KlingAI
         public CreateImageToVideoRequest()
         {
         }
+
     }
 }

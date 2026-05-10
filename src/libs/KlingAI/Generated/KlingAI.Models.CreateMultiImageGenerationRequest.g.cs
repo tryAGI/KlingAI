@@ -101,5 +101,6 @@ namespace KlingAI
         public CreateMultiImageGenerationRequest()
         {
         }
+
     }
 }

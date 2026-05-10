@@ -78,5 +78,6 @@ namespace KlingAI
         public ExpansionRatio()
         {
         }
+
     }
 }

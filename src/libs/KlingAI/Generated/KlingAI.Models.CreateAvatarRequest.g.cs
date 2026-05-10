@@ -100,5 +100,6 @@ namespace KlingAI
         public CreateAvatarRequest()
         {
         }
+
     }
 }

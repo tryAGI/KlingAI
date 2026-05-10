@@ -104,5 +104,6 @@ namespace KlingAI
         public TaskData()
         {
         }
+
     }
 }

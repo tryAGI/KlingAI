@@ -41,5 +41,6 @@ namespace KlingAI
         public TaskInfo()
         {
         }
+
     }
 }

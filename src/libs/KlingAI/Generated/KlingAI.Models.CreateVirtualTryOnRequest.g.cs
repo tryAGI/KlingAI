@@ -79,5 +79,6 @@ namespace KlingAI
         public CreateVirtualTryOnRequest()
         {
         }
+
     }
 }
