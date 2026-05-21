@@ -63,5 +63,6 @@ namespace KlingAI
         public ErrorResponse()
         {
         }
+
     }
 }

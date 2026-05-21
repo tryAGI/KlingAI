@@ -86,5 +86,6 @@ namespace KlingAI
         public CreateImageExpansionRequest()
         {
         }
+
     }
 }

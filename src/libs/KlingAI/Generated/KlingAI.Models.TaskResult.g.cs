@@ -48,5 +48,6 @@ namespace KlingAI
         public TaskResult()
         {
         }
+
     }
 }

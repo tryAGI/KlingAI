@@ -21,6 +21,19 @@ namespace KlingAI
         /// Create multi-image generation task<br/>
         /// Generate images by combining multiple reference images.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::KlingAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::KlingAI.AutoSDKHttpResponse<global::KlingAI.CreateTaskResponse>> CreateMultiImageGenerationAsResponseAsync(
+
+            global::KlingAI.CreateMultiImageGenerationRequest request,
+            global::KlingAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create multi-image generation task<br/>
+        /// Generate images by combining multiple reference images.
+        /// </summary>
         /// <param name="modelName">
         /// Model to use for generation.
         /// </param>
