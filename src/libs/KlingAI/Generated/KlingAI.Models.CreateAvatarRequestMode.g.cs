@@ -10,11 +10,11 @@ namespace KlingAI
     public enum CreateAvatarRequestMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Std,
     }

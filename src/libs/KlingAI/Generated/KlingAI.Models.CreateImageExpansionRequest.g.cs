@@ -4,7 +4,7 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateImageExpansionRequest
     {
@@ -22,7 +22,7 @@ namespace KlingAI
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expansion_ratio")]
         [global::System.Text.Json.Serialization.JsonRequired]

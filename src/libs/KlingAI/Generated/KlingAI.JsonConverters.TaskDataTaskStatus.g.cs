@@ -20,7 +20,7 @@ namespace KlingAI.JsonConverters
                     {
                         return global::KlingAI.TaskDataTaskStatusExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

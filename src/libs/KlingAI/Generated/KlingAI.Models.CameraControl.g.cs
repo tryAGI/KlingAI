@@ -4,7 +4,7 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CameraControl
     {
@@ -16,7 +16,7 @@ namespace KlingAI
         public global::KlingAI.CameraControlType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         public global::KlingAI.CameraControlConfig? Config { get; set; }

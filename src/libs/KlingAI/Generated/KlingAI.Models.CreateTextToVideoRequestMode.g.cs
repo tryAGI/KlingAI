@@ -10,11 +10,11 @@ namespace KlingAI
     public enum CreateTextToVideoRequestMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Std,
     }

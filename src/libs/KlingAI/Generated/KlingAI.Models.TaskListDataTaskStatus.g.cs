@@ -9,19 +9,19 @@ namespace KlingAI
     public enum TaskListDataTaskStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Submitted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Succeed,
     }

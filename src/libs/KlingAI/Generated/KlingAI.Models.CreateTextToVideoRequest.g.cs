@@ -4,7 +4,7 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateTextToVideoRequest
     {
@@ -69,7 +69,7 @@ namespace KlingAI
         public global::KlingAI.CreateTextToVideoRequestSound? Sound { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("camera_control")]
         public global::KlingAI.CameraControl? CameraControl { get; set; }

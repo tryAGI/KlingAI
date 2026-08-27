@@ -9,11 +9,11 @@ namespace KlingAI
     public enum CreateImageGenerationRequestImageReference
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Face,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subject,
     }

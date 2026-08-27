@@ -4,7 +4,7 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateImageToVideoRequest
     {
@@ -98,7 +98,7 @@ namespace KlingAI
         public global::System.Collections.Generic.IList<global::KlingAI.VoiceItem>? VoiceList { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("camera_control")]
         public global::KlingAI.CameraControl? CameraControl { get; set; }

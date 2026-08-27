@@ -10,11 +10,11 @@ namespace KlingAI
     public enum CreateImageGenerationRequestResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2k,
     }

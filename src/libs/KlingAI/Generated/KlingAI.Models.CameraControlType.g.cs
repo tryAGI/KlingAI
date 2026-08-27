@@ -9,23 +9,23 @@ namespace KlingAI
     public enum CameraControlType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DownBack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ForwardUp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LeftTurnForward,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RightTurnForward,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Simple,
     }

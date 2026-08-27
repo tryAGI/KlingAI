@@ -10,15 +10,15 @@ namespace KlingAI
     public enum CreateTextToVideoRequestAspectRatio
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x16_9,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1_1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x9_16,
     }

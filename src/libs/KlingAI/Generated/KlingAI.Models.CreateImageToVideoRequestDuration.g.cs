@@ -10,11 +10,11 @@ namespace KlingAI
     public enum CreateImageToVideoRequestDuration
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x10,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x5,
     }

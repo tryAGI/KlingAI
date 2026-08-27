@@ -4,7 +4,7 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TaskListData
     {
@@ -28,7 +28,7 @@ namespace KlingAI
         public string? TaskStatusMsg { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("task_info")]
         public global::KlingAI.TaskInfo? TaskInfo { get; set; }
@@ -46,7 +46,7 @@ namespace KlingAI
         public long? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("task_result")]
         public global::KlingAI.TaskResult? TaskResult { get; set; }

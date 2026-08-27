@@ -10,23 +10,23 @@ namespace KlingAI
     public enum CreateTextToVideoRequestModelName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV15,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV21,
     }
