@@ -4,24 +4,24 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AccountCostsData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         public int? Code { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("msg")]
         public string? Msg { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_pack_subscribe_infos")]
         public global::System.Collections.Generic.IList<global::KlingAI.ResourcePackage>? ResourcePackSubscribeInfos { get; set; }

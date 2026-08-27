@@ -4,7 +4,7 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AccountCostsResponse
     {
@@ -27,7 +27,7 @@ namespace KlingAI
         public string? RequestId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::KlingAI.AccountCostsData? Data { get; set; }

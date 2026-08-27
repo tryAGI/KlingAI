@@ -9,35 +9,35 @@ namespace KlingAI
     public enum EffectsInputEffectScene
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Christmas,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DualCharacter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Halloween,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NewYear,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OldPhotoRestoration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpringFestival,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thanksgiving,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ValentinesDay,
     }

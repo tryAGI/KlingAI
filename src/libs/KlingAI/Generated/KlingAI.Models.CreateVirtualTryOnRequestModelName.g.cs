@@ -10,11 +10,11 @@ namespace KlingAI
     public enum CreateVirtualTryOnRequestModelName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KolorsVirtualTryOnV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KolorsVirtualTryOnV15,
     }

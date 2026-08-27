@@ -4,18 +4,18 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TaskResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("videos")]
         public global::System.Collections.Generic.IList<global::KlingAI.VideoResult>? Videos { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         public global::System.Collections.Generic.IList<global::KlingAI.ImageResult>? Images { get; set; }

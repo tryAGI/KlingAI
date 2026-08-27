@@ -4,7 +4,7 @@
 namespace KlingAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateTaskData
     {
@@ -21,7 +21,7 @@ namespace KlingAI
         public string? TaskStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("task_info")]
         public global::KlingAI.TaskInfo? TaskInfo { get; set; }

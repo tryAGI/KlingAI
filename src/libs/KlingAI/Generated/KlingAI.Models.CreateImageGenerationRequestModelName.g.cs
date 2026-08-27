@@ -10,15 +10,15 @@ namespace KlingAI
     public enum CreateImageGenerationRequestModelName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV15,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KlingV2,
     }

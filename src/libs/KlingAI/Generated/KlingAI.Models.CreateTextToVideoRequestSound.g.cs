@@ -10,11 +10,11 @@ namespace KlingAI
     public enum CreateTextToVideoRequestSound
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Off,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         On,
     }

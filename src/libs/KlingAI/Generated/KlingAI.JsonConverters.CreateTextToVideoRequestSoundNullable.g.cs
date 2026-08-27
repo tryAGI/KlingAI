@@ -20,7 +20,7 @@ namespace KlingAI.JsonConverters
                     {
                         return global::KlingAI.CreateTextToVideoRequestSoundExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:
