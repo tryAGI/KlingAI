@@ -124,8 +124,8 @@ namespace KlingAI
                                 path: "/account/costs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("start_time", startTime.ToString()!)
-                                .AddRequiredParameter("end_time", endTime.ToString()!)
+                                .AddRequiredParameter("start_time", startTime.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddRequiredParameter("end_time", endTime.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("resource_pack_name", resourcePackName)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -168,8 +168,8 @@ namespace KlingAI
                 PrepareGetAccountCostsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime!,
-                    endTime: endTime!,
+                    startTime: startTime,
+                    endTime: endTime,
                     resourcePackName: resourcePackName);
 
                 return __httpRequest;
@@ -192,7 +192,7 @@ namespace KlingAI
                                 pathTemplate: "\"/account/costs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -226,7 +226,7 @@ namespace KlingAI
                                 pathTemplate: "\"/account/costs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -267,7 +267,7 @@ namespace KlingAI
                                 pathTemplate: "\"/account/costs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -315,7 +315,7 @@ namespace KlingAI
                                 pathTemplate: "\"/account/costs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -337,7 +337,7 @@ namespace KlingAI
                                 pathTemplate: "\"/account/costs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
